@@ -1,6 +1,7 @@
 import sublime, sublime_plugin, random, time
   
 class RoboTypeCommand(sublime_plugin.TextCommand):  
+	
 	keys = [
 		['q','w','e','r','t','y','u','i','o','p','[',']'],
 		['a','s','d','f','g','h','j','k','l',';','\''],
@@ -86,12 +87,16 @@ class RoboTypeCommand(sublime_plugin.TextCommand):
 
 	def reset(self):
 		self.stringIndex = 0
-		self.typoIndex = None		
+		self.typoIndex = None	
+
+
 
 class RoboTypeAddCharCommand(sublime_plugin.TextCommand):
 	
 	def run(self, edit, args):
 		self.view.insert(edit, self.view.sel()[0].begin(), args['char'])
+
+
 
 class RoboTypeDeleteCharCommand(sublime_plugin.TextCommand):
 	
