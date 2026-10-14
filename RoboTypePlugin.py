@@ -73,7 +73,7 @@ class RoboTypeCommand(sublime_plugin.TextCommand):
 	# Did the robot "notice" the typo?
 	def willBackspace(self):
 		if(self.stringIndex is (len(self.text_to_print)-1)):
-			return true
+			return True
 		
 		chance = self.view.settings().get('robotype_typo_reaction')
 		rand = random.randrange(1, chance+1)
